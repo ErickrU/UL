@@ -1,7 +1,7 @@
 <h2>Pruebas</h2>
 <p class="text-muted">
   Cursos:{% for course in user.learner.interests.all %} {{ course.get_html_badge }}{% endfor %}
-  <a href="{% url 'interests' %}"><small>(Actualizar intereses)</small></a>
+  <a style="color: #5cb85c;" href="{% url 'interests' %}"><small>(Actualizar intereses)</small></a>
 </p>
 
 <ul class="nav nav-tabs mb-3">

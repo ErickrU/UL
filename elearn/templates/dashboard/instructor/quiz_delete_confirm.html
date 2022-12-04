@@ -8,24 +8,24 @@
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="#" style="color: #999965; font-weight: bold; letter-spacing: 10px">Learning Management System</a>
+                    <a href="#" style="color: #999965; font-weight: bold; letter-spacing: 10px">UTEC LEARN SISTEMA DE PRUEBAS</a>
                 </li>
             </ol>
             <div class="card mb-3">
                 <div class="card-body">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'quiz_change_list' %}">My Quizzes</a></li>
-      <li class="breadcrumb-item"><a href="{% url 'quiz_change' quiz.pk %}">{{ quiz.name }}</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Confirm deletion</li>
+      <li  class="breadcrumb-item"><a style="color: #5cb85c;" href="{% url 'quiz_change_list' %}">Mis pruebas</a></li>
+      <li class="breadcrumb-item"><a style="color: #5cb85c;" href="{% url 'quiz_change' quiz.pk %}">{{ quiz.name }}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Confirmacion</li>
     </ol>
   </nav>
-  <h2 class="mb-3">Confirm deletion</h2>
-  <p class="lead">Are you sure you want to delete the quiz <strong>"{{ quiz.name }}"</strong>? There is no going back.</p>
+  <h2 class="mb-3">Confrimacion del borrado de la prueba</h2>
+  <p class="lead">Estas seguro que deseas borrar la prueba <strong>"{{ quiz.name }}"</strong>? No se puede deshaceresta accion.</p>
   <form method="post">
     {% csrf_token %}
-    <button type="submit" class="btn btn-danger btn-lg">Yes, I'm sure</button>
-    <a href="{% url 'quiz_change' quiz.pk %}" class="btn btn-outline-secondary btn-lg" role="button">Nevermind</a>
+    <button type="submit" class="btn btn-danger btn-lg">chi toy seguro</button>
+    <a href="{% url 'quiz_change' quiz.pk %}" class="btn btn-outline-secondary btn-lg" role="button">Cancelar</a>
   </form>
 
         </div>

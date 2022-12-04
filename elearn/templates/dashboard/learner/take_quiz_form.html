@@ -14,7 +14,7 @@
             <div class="card mb-3">
                 <div class="card-header">
                     <i class="fas fa-table text-primary"></i>
-                    List of Taken Quiz
+                    {{ quiz.name }}
                 </div>
                 <div class="card-body">
                     {% for message in messages %}
@@ -32,7 +32,7 @@
   <form method="post" novalidate>
     {% csrf_token %}
     {{ form|crispy }}
-    <button type="submit" class="btn btn-primary">Next →</button>
+    <button type="submit" class="btn btn-primary">Siguiente →</button>
   </form>
 
 

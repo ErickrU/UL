@@ -13,55 +13,55 @@
     <div class="col-sm-8">
       <div class="card mb-3">
             {% if users %}
-            <center><p class="text-danger">You have already created profile</p></center>
+            <center><p class="text-danger">Ya has create tu perfil</p></center>
             {% else %}
                 <div class="card-header">
                     <i class="fas fa-table text-primary"></i>
-                    Create Your Profile 
+                    Crea tu perfil
                 </div>
                 <div class="card-body">
             <form action="" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
         <div class="form-group">
-                <div class="col"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
+                <div class="col"><input type="text" class="form-control" name="first_name" placeholder="Nombres" required="required"></div>
         </div>
         <div class="form-group">
-                <div class="col"><input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required"></div>                 
+                <div class="col"><input type="text" class="form-control" name="last_name" placeholder="Apellidos" required="required"></div>                 
         </div>
 
          <div class="form-group">
-                <div class="col"><input type="text" class="form-control" name="phonenumber" placeholder="Phone Number" required="required"></div>
+                <div class="col"><input type="text" class="form-control" name="phonenumber" placeholder="Numero de telefono" required="required"></div>
         </div>
 
         <div class="form-group">
-                <div class="col"><input type="text" class="form-control" name="birth_date" placeholder="Date of Birth" required="required"></div>
+                <div class="col"><input type="text" class="form-control" name="birth_date" placeholder="Dia de nacimiento" required="required"></div>
         </div>
 
       <div class="form-group">
                 <div class="col"><input type="text" class="form-control" name="bio" placeholder="Hobby" required="required"></div>
         </div>
         <div class="form-group">
-                <div class="col"><input type="text" class="form-control" name="city" placeholder="City" required="required"></div>
+                <div class="col"><input type="text" class="form-control" name="city" placeholder="Ciudad" required="required"></div>
         </div>
         <div class="form-group">
-                <div class="col"><input type="text" class="form-control" name="country" placeholder="Country" required="required"></div>
+                <div class="col"><input type="text" class="form-control" name="country" placeholder="Pais" required="required"></div>
         </div>
           <div class="form-group">
             <div class="row">
                 <div class="col"><label></label><br>
-                <textarea name="content"s rows="5" cols="40" placeholder="Compose Your Biography"></textarea>
+                <textarea name="content"s rows="5" cols="40" placeholder="Cuentanos sobre ti"></textarea>
 
             </div>          
         </div>
       </div>
 
         <div class="form-group">
-                <div class="col"><label>Choose Profile Picture</label>
+                <div class="col"><label>Eligie tu foto de perfil</label>
                     <input type="file" id="myFile" name="avatar" placeholder="Report Attachment" enctype="multipart/form-data"></div>
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-lg btn-block" href="">Save</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" href="">Guardar</button>
         </div>
     </form>
     {% endif %}

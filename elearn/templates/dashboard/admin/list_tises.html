@@ -11,14 +11,14 @@
         <div class="container-fluid">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="#" style="color: #999965; font-weight: bold; letter-spacing: 10px">Learning Mangement System</a>
+                    <a href="#" style="color: #999965; font-weight: bold; letter-spacing: 10px">UTEC LEARN</a>
                 </li>
             </ol>
             <div class="card mb-3">
                 <div class="card-header">
                     <i class="fas fa-table"></i>
-                    List Of tises
-                    <a  class="btn btn-sm btn-success" href="" style="padding: 8px; float: right; background-color: #999965; color: white;">Add tise</a>
+                    Lista de Avisos
+                    <a  class="btn btn-sm btn-success" href="" style="padding: 8px; float: right; background-color: #999965; color: white;">Agregar aviso</a>
                 </div>
                 <div class="card-body">
                     {% for message in messages %}
@@ -31,8 +31,8 @@
                             <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Anncouncement</th>
-                                <th>Delete</th>
+                                <th>Anuncios</th>
+                                <th>Eliminar</th>
 
                             </tr>
                             </thead>
@@ -44,7 +44,7 @@
                                     <td>{{ tise.id }}</td>
                                     <td>{{ tise.content }}</td>
         <td>
-          <a href="{% url 'adpost' tise.pk %}"><button type="button" class="btn btn-danger"> Delete</button></a></td>
+          <a href="{% url 'adpost' tise.pk %}"><button type="button" class="btn btn-danger"> Eliminar</button></a></td>
                                 </tr>
                                 {% endfor %}
                                 {% endif %}

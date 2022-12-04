@@ -10,7 +10,7 @@
            <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                   <a href="{% url 'itutorial' %}" style="padding-left: 10px">
-                            <button type="submit" class="btn btn-primary">Back</button>
+                            <button type="submit" class="btn btn-primary">Atras</button>
                             </a>
 
                     <a href="" style="color: green; font-weight: bold; letter-spacing: 10px; padding-left: 30px">{{ object.title }} </a>
@@ -35,7 +35,7 @@
             <p class="card-text">{{ object.content|linebreaks }}</p>
           </div>
           <div class="card-footer text-muted">
-            Posted on {{ object.created_at }} by
+            Publicado el {{ object.created_at }} por
             <a href="#">{{ object.user.username }}</a>
 
           </div>

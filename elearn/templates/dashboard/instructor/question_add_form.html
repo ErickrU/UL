@@ -7,7 +7,7 @@
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="#" style="color: #999965; font-weight: bold; letter-spacing: 10px">Learning Management System</a>
+                    <a href="#" style="color: #999965; font-weight: bold; letter-spacing: 10px">UTEC LEARN SISTEMA DE PRUEBAS</a>
                 </li>
             </ol>
             <div class="card mb-3">
@@ -20,18 +20,18 @@
 
              <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'quiz_change_list' %}">My Quizzes</a></li>
-      <li class="breadcrumb-item"><a href="{% url 'quiz_change' quiz.pk %}">{{ quiz.name }}</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Add a new question</li>
+      <li class="breadcrumb-item"><a style="color: #5cb85c;" href="{% url 'quiz_change_list' %}">Mis pruebas</a></li>
+      <li class="breadcrumb-item"><a style="color: #5cb85c;" href="{% url 'quiz_change' quiz.pk %}">{{ quiz.name }}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Agregar una pregunta</li>
     </ol>
   </nav>
-  <h2 class="mb-3">Add a new question</h2>
-  <p class="lead">Add first the text of the question. In the next step you will be able to add the possible answers.</p>
+  <h2 class="mb-3">Agregar una pregunta</h2>
+  <p class="lead">Agrega la pregunta en texto plano, posteriormente podrias agregar las posibles respuestas</p>
   <form method="post" novalidate>
     {% csrf_token %}
     {{ form|crispy }}
-    <button type="submit" class="btn btn-success">Save</button>
-    <a href="{% url 'quiz_change' quiz.pk %}" class="btn btn-outline-secondary" role="button">Nevermind</a>
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a href="{% url 'quiz_change' quiz.pk %}" class="btn btn-outline-secondary" role="button">Cancelar</a>
   </form>
 
         </div>

@@ -41,7 +41,7 @@
             <td class="align-middle">{{ quiz.course.get_html_badge }}</td>
             <td class="align-middle">{{ quiz.questions_count }} questions</td>
             <td class="text-right">
-              <a href="{% url 'take_quiz' quiz.pk %}" class="btn btn-primary">Start quiz</a>
+              <a href="{% url 'take_quiz' quiz.pk %}" class="btn btn-primary">Iniciar test</a>
             </td>
           </tr>
         {% empty %}

@@ -35,7 +35,7 @@ class Profile(models.Model):
 
 class Announcement(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    content = models.TextField()
+    content = models.TextField("Mensaje")
     posted_at = models.DateTimeField(auto_now=True, null=True)
 
 
@@ -45,7 +45,7 @@ class Announcement(models.Model):
 
 class Course(models.Model):
     name = models.CharField(max_length=30)
-    color = models.CharField(max_length=7, default='#007bff')
+    color = models.CharField(max_length=7, default='#5cb85c')
 
     def __str__(self):
         return self.name
@@ -86,7 +86,7 @@ class Notes(models.Model):
 
 class Quiz(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='quizzes')
-    name = models.CharField(max_length=255)
+    name = models.CharField("Nombre prueba", max_length=255)
     course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='quizzes')
 
     def __str__(self):
@@ -95,7 +95,7 @@ class Quiz(models.Model):
 
 class Question(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name='questions')
-    text = models.CharField('Question', max_length=255)
+    text = models.CharField('Pregunta', max_length=255)
 
     def __str__(self):
         return self.text
@@ -103,8 +103,8 @@ class Question(models.Model):
 
 class Answer(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answers')
-    text = models.CharField('Answer', max_length=255)
-    is_correct = models.BooleanField('Correct answer', default=False)
+    text = models.CharField('Respuesta', max_length=255)
+    is_correct = models.BooleanField('Respuesta correcta', default=False)
 
     def __str__(self):
         return self.text

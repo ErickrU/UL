@@ -8,15 +8,15 @@
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="#" style="color: #999965; font-weight: bold; letter-spacing: 10px">Learning Management System</a>
+                    <a href="#" style="color: #999965; font-weight: bold; letter-spacing: 10px">UTEC LEARN SISTEMA DE PRUEBAS</a>
                 </li>
             </ol>
             <div class="card mb-3">
                 <div class="card-body">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'quiz_change_list' %}">My Quizzes</a></li>
-      <li class="breadcrumb-item"><a href="{% url 'quiz_change' quiz.pk %}">{{ quiz.name }}</a></li>
+      <li class="breadcrumb-item"><a style="color: #5cb85c;" href="{% url 'quiz_change_list' %}">Mis pruebas</a></li>
+      <li class="breadcrumb-item"><a style="color: #5cb85c;" href="{% url 'quiz_change' quiz.pk %}">{{ quiz.name }}</a></li>
       <li class="breadcrumb-item active" aria-current="page">{{ question.text }}</li>
     </ol>
   </nav>
@@ -32,13 +32,13 @@
       <div class="card-header">
         <div class="row">
           <div class="col-8">
-            <strong>Answers</strong>
+            <strong>Respuestas</strong>
           </div>
           <div class="col-2">
-            <strong>Correct?</strong>
+            <strong>Correta?</strong>
           </div>
           <div class="col-2">
-            <strong>Delete?</strong>
+            <strong>Borrar?</strong>
           </div>
         </div>
       </div>
@@ -68,11 +68,11 @@
       </div>
     </div>
     <p>
-      <small class="form-text text-muted">Your question may have at least <strong>2</strong> answers and maximum <strong>10</strong> answers. Select at least one correct answer.</small>
+      <small class="form-text text-muted">Tu pregunta debe tener al menos <strong>2</strong> respuestas y un maximo de <strong>10</strong> respesuas, y al menos una correcta.</small>
     </p>
-    <button type="submit" class="btn btn-success">Save changes</button>
-    <a href="{% url 'quiz_change' quiz.pk %}" class="btn btn-outline-secondary" role="button">Nevermind</a>
-    <a href="{% url 'question_delete' quiz.pk question.pk %}" class="btn btn-danger float-right">Delete</a>
+    <button type="submit" class="btn btn-success">Guadrar cambios</button>
+    <a href="{% url 'quiz_change' quiz.pk %}" class="btn btn-outline-secondary" role="button">cancelar</a>
+    <a href="{% url 'question_delete' quiz.pk question.pk %}" class="btn btn-danger float-right">Eliminar</a>
   </form>
 
 

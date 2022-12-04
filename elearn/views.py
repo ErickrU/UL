@@ -90,7 +90,7 @@ def loginView(request):
 			else:
 			    return redirect('login_form')
 		else:
-		    messages.info(request, "Invalid Username or Password")
+		    messages.info(request, "Usuario o contraseña incorrectos")
 		    return redirect('login_form')
 
 
@@ -119,7 +119,7 @@ class InstructorSignUpView(CreateView):
 
     def form_valid(self, form):
         user = form.save()
-        messages.success(self.request, 'Instructor Was Added Successfully')
+        messages.success(self.request, 'El instructor se ha creado con éxito')
         return redirect('isign')
 
 
@@ -134,7 +134,7 @@ class AdminLearner(CreateView):
 
     def form_valid(self, form):
         user = form.save()
-        messages.success(self.request, 'Learner Was Added Successfully')
+        messages.success(self.request, 'El estudiante se ha creado con éxito')
         return redirect('addlearner')
 
 
@@ -146,7 +146,7 @@ def course(request):
 
 		a = Course(name=name, color=color)
 		a.save()
-		messages.success(request, 'New Course Was Registed Successfully')
+		messages.success(request, 'Nuevo curso creado con éxito')
 		return redirect('course')
 	else:
 	     return render(request, 'dashboard/admin/course.html')	
@@ -234,10 +234,10 @@ def create_user(request):
 
         a = User(first_name=first_name, last_name=last_name, username=username, password=password, email=email, is_admin=True)
         a.save()
-        messages.success(request, 'Admin Was Created Successfully')
+        messages.success(request, 'Admin creado con éxito')
         return redirect('aluser')
     else:
-        messages.error(request, 'Admin Was Not Created Successfully')
+        messages.error(request, 'There was an error')
         return redirect('create_user_form')
 
 
@@ -259,7 +259,7 @@ def acreate_profile(request):
         print(user_id)
 
         Profile.objects.filter(id = user_id).create(user_id=user_id,phonenumber=phonenumber, first_name=first_name, last_name=last_name, bio=bio, birth_date=birth_date, avatar=avatar, city=city, country=country)
-        messages.success(request, 'Your Profile Was Created Successfully')
+        messages.success(request, 'Tu perfil se ha creado con éxito')
         return redirect('auser_profile')
     else:
         current_user = request.user
@@ -300,7 +300,7 @@ class QuizCreateView(CreateView):
         quiz = form.save(commit=False)
         quiz.owner = self.request.user
         quiz.save()
-        messages.success(self.request, 'Quiz created, Go A Head And Add Questions')
+        messages.success(self.request, 'Prueba creada, es hora de las preguntas')
         return redirect('quiz_change', quiz.pk)
 
 
@@ -334,7 +334,7 @@ def question_add(request, pk):
             question = form.save(commit=False)
             question.quiz = quiz
             question.save()
-            messages.success(request, 'You may now add answers/options to the question.')
+            messages.success(request, 'Puedes seguir agregando preguntas y respuestas si asi lo deseas.')
             return redirect('question_change', quiz.pk, question.pk)
     else:
         form = QuestionForm()
@@ -368,7 +368,7 @@ def question_change(request, quiz_pk, question_pk):
             with transaction.atomic():
                 formset.save()
                 formset.save()
-            messages.success(request, 'Question And Answers Saved Successfully')
+            messages.success(request, 'Pregunta y respuestas guardadas')
             return redirect('quiz_change', quiz.pk)
     else:
         form = QuestionForm(instance=question)
@@ -412,7 +412,7 @@ class QuestionDeleteView(DeleteView):
 
     def delete(self, request, *args, **kwargs):
         question = self.get_object()
-        messages.success(request, 'The Question Was Deleted Successfully')
+        messages.success(request, 'Pregunta eliminada')
         return super().delete(request, *args, **kwargs)
 
 
@@ -460,7 +460,7 @@ class QuizDeleteView(DeleteView):
 
     def delete(self, request, *args, **kwargs):
         quiz = self.get_object()
-        messages.success(request, 'The quiz %s was deleted with success!' % quiz.name)
+        messages.success(request, 'Esta prueba %s fue borrada exitosamente' % quiz.name)
         return super().delete(request, *args, **kwargs)
 
     def get_queryset(self):
@@ -480,7 +480,7 @@ def question_add(request, pk):
             question = form.save(commit=False)
             question.quiz = quiz
             question.save()
-            messages.success(request, 'You may now add answers/options to the question.')
+            messages.success(request, 'Puedes seguir agregando preguntas y respuestas si asi lo deseas.')
             return redirect('question_change', quiz.pk, question.pk)
     else:
         form = QuestionForm()
@@ -561,7 +561,7 @@ def create_profile(request):
         print(user_id)
 
         Profile.objects.filter(id = user_id).create(user_id=user_id,first_name=first_name, last_name=last_name, phonenumber=phonenumber, bio=bio, city=city, country=country, birth_date=birth_date, avatar=avatar)
-        messages.success(request, 'Profile was created successfully')
+        messages.success(request, 'Tu perfil ha sido creado exitosamente')
         return redirect('user_profile')
     else:
         current_user = request.user
@@ -593,10 +593,10 @@ def publish_tutorial(request):
         print(course_id)
         a = Tutorial(title=title, content=content, thumb=thumb, user_id=author_id, course_id=course_id)
         a.save()
-        messages.success(request, 'Tutorial was published successfully!')
+        messages.success(request, 'Tu tutorial ha sido publicado exitosamente')
         return redirect('tutorial')
     else:
-        messages.error(request, 'Tutorial was not published successfully!')
+        messages.error(request, 'Tu tutorial no ha sido publicado')
         return redirect('tutorial')
 
 
@@ -641,10 +641,10 @@ def publish_notes(request):
 
         a = Notes(title=title, cover=cover, file=file, user_id=user_id, course_id=course_id)
         a.save()
-        messages.success = (request, 'Notes Was Published Successfully')
+        messages.success = (request, 'Tu nota ha sido publicada exitosamente')
         return redirect('lnotes')
     else:
-        messages.error = (request, 'Notes Was Not Published Successfully')
+        messages.error = (request, 'Tu nota no ha sido publicada')
         return redirect('iadd_notes')
 
 
@@ -660,7 +660,7 @@ def update_file(request, pk):
         print(file)
 
         Notes.objects.filter(id = pk).update(file = file)
-        messages.success = (request, 'Notes was updated successfully!')
+        messages.success = (request, 'Las notas fueron actulizadas correctamente!')
         return redirect('lnotes')
     else:
         return render(request, 'dashboard/instructor/update.html')
@@ -775,7 +775,7 @@ class LearnerInterestsView(UpdateView):
         return self.request.user.learner
 
     def form_valid(self, form):
-        messages.success(self.request, 'Course Was Updated Successfully')
+        messages.success(self.request, 'Intereses actualizados con éxito!')
         return super().form_valid(form)
 
 
@@ -839,9 +839,9 @@ def take_quiz(request, pk):
                     score = round((correct_answers / total_questions) * 100.0, 2)
                     TakenQuiz.objects.create(learner=learner, quiz=quiz, score=score)
                     if score < 50.0:
-                        messages.warning(request, 'Better luck next time! Your score for the quiz %s was %s.' % (quiz.name, score))
+                        messages.warning(request, 'Mejor suerte para la proxima en %s el score fue de %s.' % (quiz.name, score))
                     else:
-                        messages.success(request, 'Congratulations! You completed the quiz %s with success! You scored %s points.' % (quiz.name, score))
+                        messages.success(request, 'Felicidades completaste el cuestionario %s obtuviste %s puntos.' % (quiz.name, score))
                     return redirect('lquiz_list')
     else:
         form = TakeQuizForm(question=question)

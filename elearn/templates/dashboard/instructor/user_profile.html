@@ -33,7 +33,7 @@
                      {% if user.avatar %}
                         <center><img src="{{ user.avatar.url }}" class="img-thumbnail" alt="{{ user.user.username }}" style="height: 236px; width: 304px"></center><br>
                     {% else %}
-                                    <span class="text-muted">No Profile Picture for {{ user.user.username }}</span>
+                                    <span class="text-muted">Sin foto de perfil para {{ user.user.username }}</span>
                     {% endif %}
 
                     
@@ -86,8 +86,8 @@
 </div>
  {% endfor %}
  {% else %}
- <center><span><p class="text-danger">No profile created yet</p></span></center>
- <center><a href="{% url 'create_profile' %}">Click here to create</center>
+ <center><span><p class="text-danger">Perfil no creado aun</p></span></center>
+ <center><a style="color: #5cb85c;" href="{% url 'create_profile' %}">Clickea aqui para crear tu perfil</center>
 
  {% endif %}
 

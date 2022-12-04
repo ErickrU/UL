@@ -14,7 +14,7 @@
                <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="#"></a>
-                    <a  class="btn btn-sm btn-success" href="{% url 'iadd_notes' %}" style="padding: 8px; float: right; background-color: green; color: white;">Add Notes</a>
+                    <a  class="btn btn-sm btn-success" href="{% url 'iadd_notes' %}" style="padding: 8px; float: right; background-color: green; color: white;">Agregar nota</a>
                 </li>
             </ol>
             <div class="card mb-3">
@@ -34,11 +34,11 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Cover</th>
-                                <th>Title</th>
-                                <th>Read</th>
-                                <th>Download</th>
-                                <th>Update</th>
+                                <th>Portada</th>
+                                <th>Titulo</th>
+                                <th>Leer</th>
+                                <th>Descargar</th>
+                                <th>Actualizar notas</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -54,7 +54,7 @@
                                     {% if note.cover %}
                                     <img src="{{ note.cover.url }}" alt="{{ note.title }}" style="width:100px; height: 100px">
                                     {% else %}
-                                    <span class="text-muted">No cover</span>
+                                    <span class="text-muted">Sin portada</span>
                                     {% endif %}
                                    </td>
 
@@ -66,7 +66,7 @@
                                       <a href="{{ note.file.url }}" class="btn btn-outline-primary" target="_blank">
                                     View PDF</a>
                                     {% else %}
-                                    <span class="text-muted">No PDF</span>
+                                    <span class="text-muted">Sin PDF</span>
                                    {% endif %}
                                   </td>
                                     <td>
@@ -74,11 +74,11 @@
                                       <a href="{{ note.file.url }}" download class="btn btn-outline-success">
                                     Download PDF</a>
                                     {% else %}
-                                   <span class="text-muted">No PDF</span>
+                                   <span class="text-muted">Sin PDF</span>
                                    {% endif %}
                                   </td>
         <td>
-          <a href="{% url 'update_file' note.pk %}"><button type="button" class="btn btn-success">Update Notes</button>
+          <a href="{% url 'update_file' note.pk %}"><button type="button" class="btn btn-success">Actualizar notas</button>
         </td>
                                   
                                 </tr>

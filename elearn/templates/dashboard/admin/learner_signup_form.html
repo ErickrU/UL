@@ -16,7 +16,7 @@
             <div class="card mb-3">
                 <div class="card-header">
                     <i class="fas fa-table text-primary"></i>
-                    Please Add New Learner For E-Learning
+                    Nuevo Estudiante
                 </div>
                 <div class="card-body">
                     {% for message in messages %}
@@ -24,12 +24,12 @@
                             {{ message }}
                         </div>
                     {% endfor %}
-      <h4 class="text-primary">Add New Learner</h4>
+      <h4 class="text-primary">Agrega el nuevo Estudiante</h4>
       <form method="post" novalidate>
         {% csrf_token %}
         <input type="hidden" name="next" value="{{ next }}">
         {{ form|crispy }}
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-success">Enviar</button>
       </form>
       <br>
 

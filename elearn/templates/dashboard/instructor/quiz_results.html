@@ -9,31 +9,31 @@
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="#" style="color: #999965; font-weight: bold; letter-spacing: 10px">Learning Management System</a>
+                    <a href="#" style="color: #999965; font-weight: bold; letter-spacing: 10px">UTEC LEARN SISTEMA DE PRUEBAS</a>
                 </li>
             </ol>
             <div class="card mb-3">
                 <div class="card-body">
    <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'quiz_change_list' %}">My Quizzes</a></li>
-      <li class="breadcrumb-item"><a href="{% url 'quiz_change' quiz.pk %}">{{ quiz.name }}</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Results</li>
+      <li class="breadcrumb-item"><a style="color: #5cb85c;" href="{% url 'quiz_change_list' %}">Mis pruebas</a></li>
+      <li class="breadcrumb-item"><a style="color: #5cb85c;" href="{% url 'quiz_change' quiz.pk %}">{{ quiz.name }}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Resultados</li>
     </ol>
   </nav>
-  <h2 class="mb-3">{{ quiz.name }} Results</h2>
+  <h2 class="mb-3">{{ quiz.name }} Resultados</h2>
 
   <div class="card">
     <div class="card-header">
-      <strong>Taken Quizzes</strong>
-      <span class="badge badge-pill badge-primary float-right">Average Score: {{ quiz_score.average_score|default_if_none:0.0 }}</span>
+      <strong>Prueba tomada</strong>
+      <span class="badge badge-pill badge-primary float-right">Puntaje promedio: {{ quiz_score.average_score|default_if_none:0.0 }}</span>
     </div>
     <table class="table mb-0">
       <thead>
         <tr>
-          <th>Student</th>
-          <th>Date</th>
-          <th>Score</th>
+          <th>Estudiante</th>
+          <th>Fecha</th>
+          <th>Puntaje</th>
         </tr>
       </thead>
       <tbody>
@@ -47,7 +47,7 @@
       </tbody>
     </table>
     <div class="card-footer text-muted">
-      Total respondents: <strong>{{ total_taken_quizzes }}</strong>
+      Total respondidas: <strong>{{ total_taken_quizzes }}</strong>
     </div>
   </div>
 
