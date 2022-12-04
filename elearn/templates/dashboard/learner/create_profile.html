@@ -13,11 +13,11 @@
     <div class="col-sm-8">
       <div class="card mb-3">
             {% if users %}
-            <center><p class="text-danger">You have already created profile</p></center>
+            <center><p class="text-danger">Ya has creado tu perfil</p></center>
             {% else %}
                 <div class="card-header">
                     <i class="fas fa-table text-primary"></i>
-                    Create Your Profile 
+                    Crea tu perfil!
                 </div>
                 <div class="card-body">
             <form action="" method="POST" enctype="multipart/form-data">
@@ -56,12 +56,12 @@
       </div>
 
         <div class="form-group">
-                <div class="col"><label>Choose Profile Picture</label>
+                <div class="col"><label>Selecciona tu foto de perfil</label>
                     <input type="file" id="myFile" name="avatar" placeholder="Report Attachment" enctype="multipart/form-data"></div>
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-lg btn-block" href="">Save</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" href="">Guardar</button>
         </div>
     </form>
     {% endif %}

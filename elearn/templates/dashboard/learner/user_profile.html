@@ -33,7 +33,7 @@
                      {% if user.avatar %}
                         <center><img src="{{ user.avatar.url }}" class="img-thumbnail" alt="{{ user.user.username }}" style="height: 236px; width: 304px"></center><br>
                     {% else %}
-                                    <span class="text-muted">No Profile Picture for {{ user.user.username }}</span>
+                                    <span class="text-muted">No hay imagen de perfil para {{ user.user.username }}</span>
                     {% endif %}
 
                     
@@ -41,33 +41,33 @@
                         <table class="table table-bordered">
     <thead>
         <tr>
-            <th>Title</th>
-            <th>Information</th>
+            <th>Titulo</th>
+            <th>Informacion</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Username</td>
+            <td>Usuario</td>
             <td>{{ user.user.username }}</td>
         </tr>
         <tr>
-            <td>First Name</td>
+            <td>Nombres</td>
             <td>{{ user.first_name }}</td>
         </tr>
         <tr>
-            <td>Last Name</td>
+            <td>Apellidos</td>
             <td>{{ user.last_name }}</td>
         </tr>
         <tr>
-            <td>Phone Number</td>
+            <td>Numero de telefono</td>
             <td>{{ user.phonenumber }}</td>
         </tr>
         <tr>
-            <td>Country</td>
+            <td>Pais</td>
             <td>{{ user.country }}</td>
         </tr>
         <tr>
-            <td>Biography</td>
+            <td>Biografia</td>
             <td>{{ user.bio }}</td>
         </tr>
                
@@ -86,8 +86,8 @@
 </div>
  {% endfor %}
  {% else %}
- <center><span><p class="text-danger">No profile created yet</p></span></center>
- <center><a href="{% url 'lcreate_profile' %}">Click here to create</center>
+ <center><span><p class="text-danger">No ha creado su perfil aun</p></span></center>
+ <center><a href="{% url 'lcreate_profile' %}">Clickea a qui para crear</center>
 
  {% endif %}
 

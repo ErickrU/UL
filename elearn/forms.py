@@ -36,7 +36,7 @@ class ProfileForm(forms.ModelForm):
 
         if email != confirm_email:
             raise forms.ValidationError(
-                "Emails must match!"
+                "el email debe coincidir!"
             )
 
 

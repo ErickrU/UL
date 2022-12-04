@@ -13,7 +13,7 @@
         <div class="container-fluid">
                <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="#">Read And Download Notes</a>
+                    <a href="#">Zona de notas, lee y descarga</a>
                 </li>
             </ol>
             <div class="card mb-3">
@@ -33,10 +33,10 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Cover</th>
-                                <th>Notes Title</th>
-                                <th>Read</th>
-                                <th>Download</th>
+                                <th>Portada</th>
+                                <th>Titulo</th>
+                                <th>Leer</th>
+                                <th>Descargar</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -52,7 +52,7 @@
                                     {% if note.cover %}
                                     <img src="{{ note.cover.url }}" alt="{{ note.title }}" style="width:100px; height: 100px">
                                     {% else %}
-                                    <span class="text-muted">No cover</span>
+                                    <span class="text-muted">Sin portada</span>
                                     {% endif %}
                                    </td>
 
@@ -64,7 +64,7 @@
                                       <a href="{{ note.file.url }}" class="btn btn-outline-primary" target="_blank">
                                     View PDF</a>
                                     {% else %}
-                                    <span class="text-muted">No PDF</span>
+                                    <span class="text-muted">Sin PDF</span>
                                    {% endif %}
                                   </td>
                                     <td>
@@ -72,7 +72,7 @@
                                       <a href="{{ note.file.url }}" download class="btn btn-outline-success">
                                     Download PDF</a>
                                     {% else %}
-                                   <span class="text-muted">No PDF</span>
+                                   <span class="text-muted">Sin PDF</span>
                                    {% endif %}
                                   </td>
                                 </tr>

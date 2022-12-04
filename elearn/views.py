@@ -748,7 +748,7 @@ def lcreate_profile(request):
         print(user_id)
 
         Profile.objects.filter(id = user_id).create(user_id=user_id,first_name=first_name, last_name=last_name, phonenumber=phonenumber, bio=bio, city=city, country=country, birth_date=birth_date, avatar=avatar)
-        messages.success(request, 'Profile was created successfully')
+        messages.success(request, 'Perfil creado correctamente!')
         return redirect('luser_profile')
     else:
         current_user = request.user

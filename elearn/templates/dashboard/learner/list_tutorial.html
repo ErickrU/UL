@@ -25,10 +25,10 @@
           {% endif %}
           <div class="card-body">
             <p class="card-text">{{ tutorial.content | truncatechars:100 }}</p>
-            <a href="{% url 'tutorial-detail' tutorial.pk %}" class="btn btn-primary">Read More &rarr;</a>
+            <a href="{% url 'tutorial-detail' tutorial.pk %}" class="btn btn-primary">Leer mas &rarr;</a>
           </div>
           <div class="card-footer text-muted">
-            Posted on {{ tutorial.created_at }} by
+            Publicado el {{ tutorial.created_at }} por
             <a href="#">{{ tutorial.user.username }}</a>  
           </div>
         </div>

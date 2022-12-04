@@ -13,7 +13,7 @@
             <div class="card mb-3">
                 <div class="card-header">
                     <i class="fas fa-table text-primary"></i>
-                    List of Taken Quiz
+                    Lista de pruebas respondidas
                 </div>
                 <div class="card-body">
                     {% for message in messages %}
@@ -26,9 +26,9 @@
     <table class="table mb-0">
       <thead>
         <tr>
-          <th>Quiz</th>
-          <th>Subject</th>
-          <th>Score</th>
+          <th>Prueba</th>
+          <th>Temas</th>
+          <th>Puntaje</th>
         </tr>
       </thead>
       <tbody>
@@ -40,7 +40,7 @@
           </tr>
         {% empty %}
           <tr>
-            <td class="bg-light text-center font-italic" colspan="3">You haven't completed any quiz yet.</td>
+            <td class="bg-light text-center font-italic" colspan="3">No has respondio ningun cuestionario aun.</td>
           </tr>
         {% endfor %}
       </tbody>
