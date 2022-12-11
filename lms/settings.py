@@ -9,6 +9,7 @@ from pathlib import Path
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+BASE_DB = os.path.join('db.sqlite3')
 
 TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 STATIC_DIR=os.path.join(BASE_DIR,'static')
@@ -23,11 +24,7 @@ SECRET_KEY = 'django-insecure-*sx&s%t4l1k8mqh3@0^plor5d^_sm&cs=d9vf*w7+msmu@1daj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    '*',
-    'localhost', 
-    '127.0.0.1'
-]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

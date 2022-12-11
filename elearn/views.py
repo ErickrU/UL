@@ -256,7 +256,6 @@ def acreate_profile(request):
         hobby = request.POST['hobby']
         current_user = request.user
         user_id = current_user.id
-        print(user_id)
 
         Profile.objects.filter(id = user_id).create(user_id=user_id,phonenumber=phonenumber, first_name=first_name, last_name=last_name, bio=bio, birth_date=birth_date, avatar=avatar, city=city, country=country)
         messages.success(request, 'Tu perfil se ha creado con éxito')
@@ -540,7 +539,6 @@ class TiseList(LoginRequiredMixin, ListView):
 def user_profile(request):
     current_user = request.user
     user_id = current_user.id
-    print(user_id)
     users = Profile.objects.filter(user_id=user_id)
     users = {'users':users}
     return render(request, 'dashboard/instructor/user_profile.html', users)
@@ -558,7 +556,6 @@ def create_profile(request):
         avatar = request.FILES['avatar']
         current_user = request.user
         user_id = current_user.id
-        print(user_id)
 
         Profile.objects.filter(id = user_id).create(user_id=user_id,first_name=first_name, last_name=last_name, phonenumber=phonenumber, bio=bio, city=city, country=country, birth_date=birth_date, avatar=avatar)
         messages.success(request, 'Tu perfil ha sido creado exitosamente')
@@ -566,7 +563,6 @@ def create_profile(request):
     else:
         current_user = request.user
         user_id = current_user.id
-        print(user_id)
         users = Profile.objects.filter(user_id=user_id)
         users = {'users':users}
         return render(request, 'dashboard/instructor/create_profile.html', users)
@@ -589,8 +585,7 @@ def publish_tutorial(request):
         thumb = request.FILES['thumb']
         current_user = request.user
         author_id = current_user.id
-        print(author_id)
-        print(course_id)
+
         a = Tutorial(title=title, content=content, thumb=thumb, user_id=author_id, course_id=course_id)
         a.save()
         messages.success(request, 'Tu tutorial ha sido publicado exitosamente')
@@ -657,7 +652,6 @@ def update_file(request, pk):
         file = fs.save(file.name, file)
         fileurl = fs.url(file)
         file = file_name
-        print(file)
 
         Notes.objects.filter(id = pk).update(file = file)
         messages.success = (request, 'Las notas fueron actulizadas correctamente!')
@@ -725,7 +719,6 @@ class ITiseList(LoginRequiredMixin, ListView):
 def luser_profile(request):
     current_user = request.user
     user_id = current_user.id
-    print(user_id)
     users = Profile.objects.filter(user_id=user_id)
     users = {'users':users}
     return render(request, 'dashboard/learner/user_profile.html', users)
@@ -745,7 +738,6 @@ def lcreate_profile(request):
         avatar = request.FILES['avatar']
         current_user = request.user
         user_id = current_user.id
-        print(user_id)
 
         Profile.objects.filter(id = user_id).create(user_id=user_id,first_name=first_name, last_name=last_name, phonenumber=phonenumber, bio=bio, city=city, country=country, birth_date=birth_date, avatar=avatar)
         messages.success(request, 'Perfil creado correctamente!')
@@ -753,7 +745,6 @@ def lcreate_profile(request):
     else:
         current_user = request.user
         user_id = current_user.id
-        print(user_id)
         users = Profile.objects.filter(user_id=user_id)
         users = {'users':users}
         return render(request, 'dashboard/learner/create_profile.html', users)
