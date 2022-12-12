@@ -55,6 +55,9 @@ from bootstrap_modal_forms.generic import (
 
 # Shared Views
 
+def forgot_password(request):
+    return render(request, 'forgot_password.html')
+
 def home(request):
 	return render(request, 'home.html')
 
